@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(135deg, #3498db, #fff);
+        animation: gradient 10s linear infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 100%;
+        }
+        100% {
+            background-position: 100% 0%;
+        }
+    }
+
+    .services-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        animation: fadeIn 2s ease-in;
+    }
+
+    .service {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 20px;
+        max-width: 300px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        animation: scaleUp 1s ease-in-out;
+    }
+
+    .service-type {
+        background-color: #3498db;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .service-title {
+        margin: 15px 0;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .service-title label {
+        flex: 1;
+    }
+
+    .service-title input,
+    .service-title textarea {
+        flex: 4;
+        padding: 5px;
+        border: 1px solid #ddd;
+        width: 100%;
+    }
+
+    .service-description {
+        color: #777;
+    }
+
+    @keyframes scaleUp {
+        0% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #divScroll {
+        overflow: scroll;
+        width: 100%;
+        height: 100vh;
+    }
+</style>
+
+</head>
+<body>
+    <div class="background"></div>
+    <div id="divScroll">
+        <div class="services-container">
+            <div class="service">
+                <div class="service-type">Registration Successful</div>
+                <div class="service-title">
+                    <label>Thank you for registering!</label>
+                </div>
+                <div class="service-description">
+                    <p>Registration has been successful. You can now log in using your credentials.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

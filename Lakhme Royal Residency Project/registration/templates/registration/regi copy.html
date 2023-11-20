@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<!--   {% load static  %} -->
+
+
+
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #3498db;
+            font-family: Arial, sans-serif;
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        
+        .registration-form h1 {
+            color: #333;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src='{% static "registration/images/logo.png" %}' alt="Hotel Logo">
+        </div>
+        <div class="registration-form">
+            <h1>Welcome to a captivating journey</h1>
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button id="submitBtn">Register</button>
+                <a href="/" class="cta-button">Back to Home</a>
+            </form>
+        </div>
+    </div>
+
+    <script > // Clicking Animation for the Submit Button
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+        
+        // Content Boxes Slide In on Page Load
+        const contentBoxes = document.querySelectorAll('.content-box');
+        
+        contentBoxes.forEach((box, index) => {
+            box.style.opacity = 0;
+            box.style.transform = 'translateX(50px)';
+            
+            setTimeout(() => {
+                box.style.opacity = 1;
+                box.style.transform = 'translateX(0)';
+            }, 300 * (index + 1));
+        });
+         </script>
+</body>
+</html>
+
+{% endblock %}

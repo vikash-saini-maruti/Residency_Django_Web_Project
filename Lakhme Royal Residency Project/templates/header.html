@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+    <!-- Include your CSS stylesheet here -->
+    {% comment %} <link rel="stylesheet" href="static/css/headercss.css"> {% endcomment %}
+   
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #ffffff;
+    color: #0420ff;
+    /* padding: 20px 0; */
+}
+.header-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    /* text-decoration: none; */
+    color: #1b52c8;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #00A0D6; 
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="/static/images/images2/logo.png" alt="Image">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Address</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Rest of your website content here -->
+</body>
+</html>

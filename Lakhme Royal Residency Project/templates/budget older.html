@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Age Validation</title>
+    <style>
+
+        body {
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #2980b9;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Center the form on the page */
+        .form-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        /* Style the form elements */
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hotel budget Calculator Form </h1>
+    <div class="form-container">
+        <form action="" method="GET">
+            <!-- Name Field -->
+            <label for="person">Number of Person (above 18) </label>
+            <input type="text" id="person" name="person" required>
+            <br><br>
+
+            <!-- Age Field -->
+            <label for="kid">Number of Kid (under 18) </label>
+            <input type="text" id="kid" name="kid" required>
+            <br><br>
+            
+
+            <!-- Submit Button -->
+            <input type="submit" value="Check budget">
+        </form>
+    </div>
+    <div>
+        Your Total budget fee will be charged 
+        <input type="text" value="{{person}}" >
+        <input type="text" value="{{kid}}" >
+    </div>
+
+</body>
+</html>

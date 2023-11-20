@@ -1,0 +1,14 @@
+{% extends "tablethemebaseb.html" %}
+
+{%block loop %}
+
+{% for d in table_data %}
+<tr>
+    <td>{{d.a}}</td>
+    <td>{{d.b}}</td>
+    <td>{{d.c}}</td>
+    <td>{{d.d}}</td>
+</tr>
+{% endfor %}
+
+{% endblock %}

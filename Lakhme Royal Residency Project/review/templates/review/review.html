@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Reviews</title>
+    <!-- Styles -->
+    <!-- ... your existing styles ... -->
+    <style>
+        /* Styles for the "+" button */
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+		
+		.add-review-button {
+			position: fixed;
+			bottom: 55px;
+			right: 25px;
+			background-color: #3498db;
+			color: #fff;
+			width: 72px;
+			height: 70px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 40p;
+			font-size: 60px;
+			cursor: pointer;
+			box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+			text-decoration: none;
+		}
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #3498db, #fff);
+            animation: gradient 10s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 100%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+		.service {
+            background-color: #f5f5f5;
+            border: 10px solid #ddd;
+            margin: 9px;
+            padding: 16px;
+            width: 226px;
+            text-align: center;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+            animation: scaleUp 1s ease-in-out;
+        }
+        
+
+		.service-type {
+			background-color: #3498db;
+			color: #fff;
+			padding: 5px 6px;
+			border-radius: 50px;
+			font-size: 10px;
+		}
+
+        .service-title {
+            margin: 10px 0; /* Reduced margin */
+            color: #333;
+            font-size: 16px; /* Reduced font size */
+        }
+
+        .service-description {
+            color: #777;
+            font-size: 10px; /* Reduced font size */
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+		
+			#divScroll {
+			overflow:scroll;
+			width:100%;
+			height:100vh;
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="services-container" id="divScroll" >
+        <!-- JavaScript to create review cards will be added here -->
+    </div>
+    
+    <!-- "+" button for adding a review -->
+    <a class="add-review-button" href="/review/inputreview/">+</a>
+
+    <script>
+ const reviewsData = [
+
+            {% for n in reviewtable %}
+            {
+                userName: "{{n.name}}",
+                rating: "{{n.star}}",
+                review: "{{n.review}}",
+                suggestion: "{{n.suggestion}}",
+            },
+
+            {% endfor %}
+            {
+                "userName": "Raj Patel",
+                "rating": 5,
+                "review": "Great stay!",
+                "suggestion": "None"
+            },
+            {
+                "userName": "Priya Sharma",
+                "rating": 4,
+                "review": "Good experience.",
+                "suggestion": "Improve breakfast options."
+            },
+            {
+                "userName": "Amit Verma",
+                "rating": 2,
+                "review": "Not so good.",
+                "suggestion": "Better room cleanliness and staff training."
+            },
+            {
+                "userName": "Sneha Yadav",
+                "rating": 3,
+                "review": "Average stay.",
+                "suggestion": "Enhance room amenities."
+            },
+            {
+                "userName": "Rahul Gupta",
+                "rating": 4,
+                "review": "Nice place.",
+                "suggestion": "Consider improving Wi-Fi."
+            },
+            {
+                "userName": "Anjali Reddy",
+                "rating": 3,
+                "review": "Decent hotel.",
+                "suggestion": "Improve dining options."
+            },
+            {
+                "userName": "Sanjay Kumar",
+                "rating": 5,
+                "review": "Awesome service!",
+                "suggestion": "Keep it up!"
+            },
+            {
+                "userName": "Neha Singh",
+                "rating": 2,
+                "review": "Unpleasant.",
+                "suggestion": "Address noise issues."
+            },
+            {
+                "userName": "Arun Raj",
+                "rating": 4,
+                "review": "Value for money.",
+                "suggestion": "Add more amenities."
+            },
+            {
+                "userName": "Kavita Mishra",
+                "rating": 1,
+                "review": "Terrible!",
+                "suggestion": "Complete overhaul needed."
+            },
+            {
+                "userName": "Vikas Yadav",
+                "rating": 5,
+                "review": "Fantastic!",
+                "suggestion": "Keep it up!"
+            },
+            {
+                "userName": "Riya Thakur",
+                "rating": 4,
+                "review": "Solid choice.",
+                "suggestion": "Offer room upgrades."
+            },
+            {
+                "userName": "Ramesh Iyer",
+                "rating": 3,
+                "review": "Average hotel.",
+                "suggestion": "Upgrade entertainment options."
+            },
+            {
+                "userName": "Deepa Reddy",
+                "rating": 2,
+                "review": "Disappointing.",
+                "suggestion": "Improve customer service."
+            },
+            {
+                "userName": "Alok Das",
+                "rating": 1,
+                "review": "Awful!",
+                "suggestion": "Renovation required."
+            },
+            {
+                "userName": "Meera Singh",
+                "rating": 5,
+                "review": "Exceptional!",
+                "suggestion": "Keep it up!"
+            },
+            {
+                "userName": "Rahul Gupta",
+                "rating": 4,
+                "review": "Enjoyable stay.",
+                "suggestion": "Enhance pool area."
+            },
+            {
+                "userName": "Kiran Sharma",
+                "rating": 3,
+                "review": "Average.",
+                "suggestion": "Upgrade in-room amenities."
+            },
+            {
+                "userName": "Shivani Patel",
+                "rating": 4,
+                "review": "Great value.",
+                "suggestion": "Consider more breakfast choices."
+            },
+            {
+                "userName": "Arun Kumar",
+                "rating": 5,
+                "review": "Exceptional service!",
+                "suggestion": "Maintain high standards."
+            },
+            // Add more reviews here
+        ];
+
+        const servicesContainer = document.querySelector('.services-container');
+
+        function createReviewCards(reviews) {
+            reviews.forEach(review => {
+                const card = document.createElement('div');
+                card.className = 'service';
+
+                const ratingStars = "★".repeat(review.rating);
+
+                card.innerHTML = `
+					<div class="service-type">${review.userName}</div>
+                    <div class="service-title">${ratingStars}</div>
+                    
+                    <div class="service-description">
+                        <p><strong>Review:</strong> ${review.review}</p>
+                        <p><strong>Suggestion:</strong> ${review.suggestion}</p>
+                    </div>
+                `;
+
+                servicesContainer.appendChild(card);
+            });
+        }
+
+        createReviewCards(reviewsData);
+    </script>
+</body>
+</html>
