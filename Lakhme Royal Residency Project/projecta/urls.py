@@ -34,6 +34,7 @@ urlpatterns = [
     path('form',views.userform ),
     path('regi/',include('registration.urls')),
     path('ourservice/',include('ourservice.urls')),
+    path('product/',include('Product.urls')),
 
     # path('review/',include('review.urls')),
     # path('inputreview/',include('review.urls')),

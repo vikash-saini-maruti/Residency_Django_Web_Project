@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ourservice',
     'ReactJs',
     'service',
+    'Product',
 
 
 ]
@@ -74,6 +75,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'projecta.wsgi.application'
+
+
 
 
 # Database

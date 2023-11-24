@@ -1,0 +1,25 @@
+<html>
+<body>
+    <div >
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        
+            {% for n in Productdic %}
+                <tr>
+                    <td>{{ n.Name }}</td>
+                    <td>{{ n.Disc }}</td>
+                    <td>{{ n.Price }}</td>
+                    <td>{{ n.Quantity }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+    
+</body>
+</html>
